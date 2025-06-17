@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: fullstack-backend
+  threads:
+    virtual:
+      enabled: true
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: "jdbc:postgresql://postgres-db:5432/fullstack"
+    username: postgres
+    password: root
+
+management:
+  endpoints:
+    web:
+      cors:
+        allow-credentials: false
+        allowed-methods: "GET,POST,PUT,PATCH,DELETE,OPTIONS,HEAD"
+        allowed-headers: "*"
+        allowed-origins: "*"
+
+web:
+  cors:
+    allowed-origins: ["http://localhost:3300"]
+    allowed-methods:
+      get: "GET"
+      post: "POST"
+      put: "PUT"
+      delete: "DELETE"
+      options: "OPTIONS"
+      head: "HEAD"
+    allowed-headers: ["Authorization", "content-type", "x-auth-token", "Accept", "Accept-Language", "Content-Language"]
+    exposed-headers: ["Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Credentials", "Access-Control-Expose-Headers"]
+    allow-credentials: true
+    max-age: 3600
+
