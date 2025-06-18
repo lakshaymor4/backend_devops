@@ -1,3 +1,6 @@
+server:
+  port: 8081
+  address: 0.0.0.0
 spring:
   application:
     name: fullstack-backend
@@ -30,7 +33,7 @@ management:
 
 web:
   cors:
-    allowed-origins: ["http://react-frontend:3300"]
+    allowed-origins: ["http://localhost:3300"]
     allowed-methods:
       get: "GET"
       post: "POST"
