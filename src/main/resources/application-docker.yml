@@ -30,7 +30,7 @@ management:
 
 web:
   cors:
-    allowed-origins: ["http://localhost:3300"]
+    allowed-origins: ["http://react-frontend:3300"]
     allowed-methods:
       get: "GET"
       post: "POST"
